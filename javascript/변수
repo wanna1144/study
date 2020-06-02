@@ -1,0 +1,32 @@
+변수 : 바뀔수 있는 값을 의미, 값을 선언하고 바꿀수 있음
+변수 선언시 let 키워드 사용. 같은 이름으로 선언 불가
+단, 다른 블록 내에선 같은 이름 사용 가능
+  let value = 1;
+  console.log(value);
+  value = 2;
+  console.log(value);
+
+상수 : 한번 선언하고 값이 바뀌지 않는 값을 의미
+상수를 선언 할 때에는 const 키워드를 사용. 상수를 선언하고 나면, 값을 바꿀 수 없음. 값은 이름으로 선언 불가
+  const a = 1;
+  
+변수나 상수를 선언하게 될 때 숫자 이외에 다른 값들 선언 가능
+* 숫자(Number): 바로 값을 대입
+  let value = 1;
+  
+* 문자열 (String) : 텍스트(문자열) 형태의 값은 작은 따옴표, 큰 따옴표로 감싸 선언
+  let text = 'hello';
+  let name = '자바스크립트';
+  
+* 참/거짓 (Boolean) : boolean은 참, 거짓 두가지 종류의 값만 나타낼 수 있음
+  let good = true;
+  let loading = false;
+  
+* null 과 undefined : 자바스크립트에서는 "없음" 을 의미하는 두 종류 데이터 타입
+null 은 우리가 없다고, 고의적으로 설정하는 값을 의미하고, undefined 는 우리가 설정을 하지 않았기 때문에 없는 값을 의미
+null 은 주로, 이 값이 없다! 라고 선언을 할 때 사용
+  const friend = null;
+undefined 는, 아직 값이 설정되지 않은 것을 의미
+criminal 이라는 변수를 선언하긴 했지만 값을 지정하지 않음. 이를 console.log 를 통해 보여주도록 하면 undefined 라는 값이 나타남
+  let criminal;
+  console.log(criminal); 
