@@ -1,0 +1,136 @@
+연산자는 프로그래밍 언어에서 특정 연산을 하도록 하는 문자
+  let value = 1; // 변수 선언
+  value = 2; // 대입 연산자
+
+* 산술 연산자 : 사칙연산과 같은 작업을 하는 연산자
+  let a = 1 + 2;
+  console.log(a);
+  
+  let a = 1 + 2 - (3 * 4) / 4;
+  console.log(a);
+  
+  let a = 1;
+  a++; //1을 더하기 직전의 값
+  ++a; //1을 더한 다음의 값
+  console.log(a); //3 결과값이 쌓여서 나오는 수
+  
+  덧셈 외에도 뺄셈도 똑같이 할 수 있습니다.
+  let a = 1;
+  a--;
+  console.log(a); // 0
+  
+* 대입 연산자 : 특정 값에 연산을 한 값을 바로 설정 할 때 사용 할 수 있는 연산자
+  let a = 1;
+  a = a + 3;
+  
+위와 같은 연산자를 사용한다면 아래처럼 작성가능
+  let a = 1;
+  a += 3;
+ 왼쪽의 피연산자에 오른쪽 피연산자를 더한 후 왼쪽의 피연산자에 대입
+ 
+덧셈말고 다양한 연산 가능
+  let a = 1;
+  a += 3;
+  a -= 3;
+  a *= 3;
+  a /= 3;
+  console.log(a); //쌓여서 답은 1이 된다.
+  
+* 논리 연산자 : 불리언 타입 (true 혹은 false)를 위한 연산자
+총 3가지
+! : NOT
+&& : AND
+|| : OR
+
+ -NOT 연산자는 true 는 false 로, false 는 true 로 바꿔줌
+   const a = !true;
+   console.log(a);
+   a 값은 false
+
+   const b = !false;
+   console.log(b);
+   b 값은 true
+   
+ -AND 연산자는 양쪽의 값이 둘 다 true 일때만 결과물이 true
+   const a = true && true;
+   console.log(a);
+   
+   다음과 같은 상황엔 모두 false
+   let f = false && false;
+   f = false && true;
+   f = true && false;
+   
+ -OR 연산자는 양쪽의 값 중 하나라도 true 라면 결과물이 true. 그리고, 두 값이 둘 다 false 일 때에만 false 
+   다음 상황엔 t 값은 true 입니다.
+   let t = true || false;
+   t = false || true;
+   t = true || true;
+   
+   반면 상황엔 false 입니다.
+   let f = false || false;
+   
+* 연산 순서
+사칙연산을 할 때 곱셈 나눗셈이 먼저고 그 다음이 덧셈 뺄셈인 것 처럼, 논리 연산자도 순서가 있음. 순서는 NOT -> AND -> OR
+  const value = !((true && false) || (true && false) || !false);
+  괄호로 감싸져있을 때에는 가장 마지막에 처리를 하니까 맨 앞 NOT 은 나중에 처리
+
+  우선 NOT 을 처리
+  !((true && false) || (true && false) || true);
+  
+  그 다음엔 AND 를 처리합니다.
+  !(false || false || true);
+  
+  OR 연산자를 좌측에서 우측 방향으로 처리를 하게 되면서 다음과 같이 처리
+  !true;
+  결국 결과값은 false
+  
+* 비교 연산자는 두 값을 비교 할 때 사용
+ -두 값이 일치하는지 확인 : 일치한다면 true, 일치하지 않는다면 false가 나타남
+   const a = 1;
+   const b = 1;
+   const equals = a === b; //===는 두 값이 일치하는지 확인
+   console.log(equals); //true
+  
+  ==은 타입검사까지 하지 않아서 많이 사용하지 않음
+    const a = 1;
+    const b = '1';
+    const equals = a == b;
+    console.log(equals); //true
+   문자 '1'과 숫자 1이 같은 값으로 간주
+   
+    const a = 0;
+    const b = false;
+    const equals = a == b;
+    console.log(equals); //true
+   0과 false도 같은 값으로 간주
+   
+    const a = null;
+    const b = undefined;
+    const equals = a == b;
+    console.log(equals); //true
+   null과 undefined도 같은 값으로 간주
+ 
+ -두 값이 일치하지 않는지 확인 : !== 를 사용
+   const value = 'a' !== 'b'; //결과값 true
+   
+  != 를 사용하게 되면 타입 검사를 하지 않음
+   console.log(1 != '1'); //false
+   console.log(1 !== '1'); //true
+   
+ -크고 작음
+ 두 값 중에서 무엇이 더 크고 작은지 비교하기 위해서는 다음 연산자를 사용
+  const a = 10;
+  const b = 15;
+  const c = 15;
+
+  console.log(a < b); // true
+  console.log(b > a); // true
+  console.log(b >= c); // true
+  console.log(a <= c); // true
+  console.log(b < c); // false;
+  
+ -문자열 붙이기 : +를 사용
+  const a = '안녕';
+  const b = '하세요';
+  console.log(a + b); // 안녕하세요
+   
